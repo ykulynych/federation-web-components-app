@@ -1,0 +1,4 @@
+{
+  "angular-app": { "tag": "angular-app-element", "url": "http://localhost:4301/main.js", "basePath": "/angular-app" },
+  "react-app": { "tag": "react-app-element", "url": "http://localhost:4302/react-app-element.js", "basePath": "/react-app" }
+}

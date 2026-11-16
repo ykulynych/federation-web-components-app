@@ -1,0 +1,3 @@
+.react-app a { margin-right: 16px; color: var(--demo-primary); text-decoration: none; }
+.react-app a.active { font-weight: 700; }
+.react-app .demo-actions { margin-top: 12px; }

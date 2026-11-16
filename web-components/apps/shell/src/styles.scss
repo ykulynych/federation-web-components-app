@@ -1,0 +1,80 @@
+@use '@angular/material' as mat;
+
+html {
+  color-scheme: light;
+  @include mat.theme(
+    (
+      color: mat.$azure-palette,
+      typography: sans-serif,
+      density: 0,
+    )
+  );
+}
+
+html[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+// Design tokens. Remotes (rendered in the light DOM) read these CSS variables.
+:root {
+  --demo-bg: light-dark(#f5f6fa, #14161c);
+  --demo-surface: light-dark(#ffffff, #1e212a);
+  --demo-fg: light-dark(#1b1f2a, #e8eaf0);
+  --demo-muted: light-dark(#5f6677, #9aa1b2);
+  --demo-border: light-dark(#d9dce5, #343a48);
+  --demo-primary: light-dark(#1a56db, #7ba4ff);
+  --demo-on-primary: light-dark(#ffffff, #0b1020);
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--demo-bg);
+  color: var(--demo-fg);
+  font-family: system-ui, sans-serif;
+}
+
+// Shared design-system classes owned by the shell.
+.demo-card {
+  background: var(--demo-surface);
+  border: 1px solid var(--demo-border);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.demo-btn {
+  background: var(--demo-primary);
+  color: var(--demo-on-primary);
+  border: 0;
+  border-radius: 6px;
+  padding: 8px 14px;
+  margin-right: 8px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.demo-tabs a {
+  margin-right: 16px;
+  color: var(--demo-primary);
+  text-decoration: none;
+}
+
+// Intentionally global rules that either leak INTO a remote (h3, .demo-btn) or are
+// leaked INTO by a remote (.probe) when Shadow DOM is off.
+h3 {
+  border-bottom: 2px dashed var(--demo-primary);
+  padding-bottom: 4px;
+}
+
+.probe {
+  border: 1px dashed var(--demo-border);
+  border-radius: 6px;
+  margin: 12px;
+  padding: 8px;
+  font-size: 12px;
+}

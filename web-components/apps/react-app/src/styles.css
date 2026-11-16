@@ -1,0 +1,12 @@
+:host { display: block; }
+
+.react-app { color: var(--demo-fg); font-family: system-ui, sans-serif; }
+.react-app .card { background: var(--demo-surface); border: 1px solid var(--demo-border); border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+.react-app .btn { background: var(--demo-primary); color: var(--demo-on-primary); border: 0; border-radius: 6px; padding: 8px 14px; margin-right: 8px; font: inherit; cursor: pointer; }
+.react-app .actions { margin-top: 12px; }
+.react-app a { color: var(--demo-primary); }
+.react-app nav a { margin-right: 16px; text-decoration: none; }
+.react-app nav a.active { font-weight: 700; }
+
+/* Intentionally unscoped: without Shadow DOM this rule also hits the shell's own .probe element. */
+.probe { background: gold; color: #000; }

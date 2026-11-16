@@ -1,0 +1,38 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  flex: none;
+  gap: 12px;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.body {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+.sidenav {
+  flex: none;
+  width: 220px;
+  background: var(--demo-surface);
+  border-right: 1px solid var(--demo-border);
+}
+
+.content {
+  flex: 1;
+  padding: 24px;
+  overflow: auto;
+}
+
+.active {
+  font-weight: 600;
+  background: color-mix(in srgb, var(--demo-primary) 15%, transparent);
+}

@@ -1,0 +1,23 @@
+<mat-toolbar class="header">
+  <span class="title">Platform Shell · Web Components</span>
+  <span class="spacer"></span>
+  <span class="user">{{ sdk.getCurrentUser().name }}</span>
+  <button matButton="outlined" data-testid="shadow-toggle" (click)="settings.toggleShadowMode()">
+    Shadow DOM: {{ settings.shadowMode() === 'open' ? 'on' : 'off' }}
+  </button>
+  <button matButton="outlined" (click)="toggleTheme()">Theme: {{ sdk.theme() }}</button>
+</mat-toolbar>
+
+<div class="body">
+  <nav class="sidenav">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
+      <a mat-list-item routerLink="/angular-app" routerLinkActive="active">Angular App</a>
+      <a mat-list-item routerLink="/react-app" routerLinkActive="active">React App</a>
+    </mat-nav-list>
+    <div class="probe" data-testid="shell-probe">Shell .probe element (CSS leak target)</div>
+  </nav>
+  <main class="content">
+    <router-outlet />
+  </main>
+</div>
